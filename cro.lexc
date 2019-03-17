@@ -1,10 +1,30 @@
 Multichar_Symbols
 
 %<n%>			! Noun
+%<pl%>			! Plural
+%<approx%>		! Approximative
+
+%{A%}				!Archimorpheme [a]
+
+%>					! Morpheme boundary
 
 LEXICON Root
 
-shíipi%<n%>:shíipi # ; 	! "intestines"
-buluhpá%<n%>:buluhpá # ; 	! "wild plum"
-biláannee%<n%>:biláannee # ; 	! "stove"
-awushí%<n%>:awushí # ; 	! "cave, den"
+Nouns ;
+
+LEXICON SUFF_DERIV
+
+								# ;
+%<approx%>:%>-%{A%}chí # ;
+
+LEXICON N
+
+%<n%>: SUFF_DERIV ;
+
+
+LEXICON Nouns
+
+shíipi:shíipi N ; 	! "intestines"
+buluhpá:buluhpá N ; 	! "wild plum"
+biláannee:biláannee N ; 	! "stove"
+awushí:awushí N ; 	! "cave, den"

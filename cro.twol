@@ -1,0 +1,11 @@
+Alphabet
+	a á	e é i í o ó u ú b c d h k m n p s t x
+	A Á E É I Í O Ó U Ú B C D H K M N P S T X
+	%{A%}:aa %{A%}:li
+;
+
+Rules
+
+"Remove morpheme boundary"
+%>:0 <=> _ ;
+	
