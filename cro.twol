@@ -4,8 +4,27 @@ Alphabet
 	%{A%}:aa %{A%}:li
 ;
 
+Sets
+
+ShortVow = a á i í u ú ;
+
+LongVow = e é o ó ;
+
 Rules
 
 "Remove morpheme boundary"
 %>:0 <=> _ ;
+
+"Short Vowel Deletion"
+i:0 <=> _%>: - ; 
+
+"Short Vowel deletion after a"
+á:0 <=> _%>: - ;
 	
+"VH Approximative - Short Vow"
+%{A%}:aa <=> ShortVow: %>: :-_ ;
+
+! shiipi -> shiipi<n><approx>
+
+"VH Approximattive - Long Vow"
+%{A%}:li <=> LongVow: %>: :-_;
