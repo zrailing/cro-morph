@@ -16,6 +16,7 @@ LEXICON SUFF_DERIV
 
 								# ;
 %<approx%>:%>-%{A%}chí # ;
+%<aug%>:%>-kaáshi #;
 
 LEXICON N
 
