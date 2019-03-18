@@ -5,6 +5,7 @@ Multichar_Symbols
 %<approx%>		! Approximative
 %<aug%>			! Augmentative - real, true
 %<dim%>			! Diminutive
+%<sport%>		! Sportive
 
 %{A%}				!Archimorpheme [a]
 
@@ -20,6 +21,7 @@ LEXICON SUFF_DERIV
 %<approx%>:%>-%{A%}chí # ;
 %<aug%>:%>-kaáshi #;
 %<dim%>:%>-káata #;
+%<sport%>:%>-kísshi #;
 
 LEXICON N
 
