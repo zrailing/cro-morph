@@ -3,6 +3,8 @@ Multichar_Symbols
 %<n%>			! Noun
 %<pl%>			! Plural
 %<approx%>		! Approximative
+%<aug%>			! Augmentative - real, true
+%<dim%>			! Diminutive
 
 %{A%}				!Archimorpheme [a]
 
@@ -17,6 +19,7 @@ LEXICON SUFF_DERIV
 								# ;
 %<approx%>:%>-%{A%}chí # ;
 %<aug%>:%>-kaáshi #;
+%<dim%>:%>-káata #;
 
 LEXICON N
 
