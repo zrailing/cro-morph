@@ -10,8 +10,10 @@ Multichar_Symbols
 %<real%>			! Real, genuine
 
 %<anom%>		! Agent nominalizer
+%<ltmnom%>	! Locative/temporal/manner nominalizer
 
-%{A%}				!Archimorpheme [a]
+%{A%}				!Archimorpheme aa/li
+%{LTM%}			!Archimorpheme a/0
 
 %>					! Morpheme boundary
 
@@ -23,7 +25,8 @@ LEXICON PRE_DERIV_N
 
 # ;
 Nouns ; 
-%<anom%>:ak-%> Verbs ;
+%<anom%>:ak-%> Verbs ; 
+%<ltmnom%>:al%{LTM%}-%> Verbs ;
 
 
 LEXICON SUFF_DERIV_N
@@ -56,3 +59,5 @@ LEXICON Verbs
 
 disshí:disshí V ; 	! "dance"
 kummí:kummí V ; 	! "drum and sing"
+sáhta:sáhta V ; 	! "forked, pronged"
+ihka-luus-úu:ihka-luus-úu V ;	! TEST CASE "Easter"

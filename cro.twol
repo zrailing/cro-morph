@@ -2,6 +2,7 @@ Alphabet
 	a á e é i í o ó u ú b c d h k m n p s t x
 	A Á E É I Í O Ó U Ú B C D H K M N P S T X
 	%{A%}:aa %{A%}:li
+	%{LTM%}:a %{LTM%}:0
 ;
 
 Sets
@@ -34,3 +35,6 @@ i:0 <=> _%>: - ;
 
 "VH Approximative - Long Vow"
 %{A%}:li <=> LongVow: %>: :-_;
+
+"LTM Nom SVD"
+%{LTM%}:0 <=> _ :- [ShortVow|LongVow] ;
