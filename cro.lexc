@@ -1,11 +1,15 @@
 Multichar_Symbols
 
 %<n%>			! Noun
+%<v%>			! Verb
 %<pl%>			! Plural
 %<approx%>		! Approximative
 %<aug%>			! Augmentative - real, true
 %<dim%>			! Diminutive
 %<sport%>		! Sportive
+%<real%>			! Real, genuine
+
+%<anom%>		! Agent nominalizer
 
 %{A%}				!Archimorpheme [a]
 
@@ -13,19 +17,27 @@ Multichar_Symbols
 
 LEXICON Root
 
-Nouns ;
+PRE_DERIV_N ;
 
-LEXICON SUFF_DERIV
+LEXICON PRE_DERIV_N
+
+# ;
+Nouns ; 
+%<anom%>:ak-%> Verbs ;
+
+
+LEXICON SUFF_DERIV_N
 
 								# ;
 %<approx%>:%>-%{A%}chí # ;
 %<aug%>:%>-kaáshi #;
 %<dim%>:%>-káata #;
 %<sport%>:%>-kísshi #;
+%<real%>:%>-táahili # ; !Often shortened to taale, no reason given
 
 LEXICON N
 
-%<n%>: SUFF_DERIV ;
+%<n%>: SUFF_DERIV_N ;
 
 
 LEXICON Nouns
@@ -34,3 +46,13 @@ shíipi:shíipi N ; 	! "intestines"
 buluhpá:buluhpá N ; 	! "wild plum"
 biláannee:biláannee N ; 	! "stove"
 awushí:awushí N ; 	! "cave, den"
+ashí:ashí N; ! "lodge, dwelling"
+
+LEXICON V
+
+%<v%>: # ; 
+
+LEXICON Verbs
+
+disshí:disshí V ; 	! "dance"
+kummí:kummí V ; 	! "drum and sing"

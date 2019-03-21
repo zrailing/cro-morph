@@ -1,5 +1,5 @@
 Alphabet
-	a á	e é i í o ó u ú b c d h k m n p s t x
+	a á e é i í o ó u ú b c d h k m n p s t x
 	A Á E É I Í O Ó U Ú B C D H K M N P S T X
 	%{A%}:aa %{A%}:li
 ;
@@ -15,16 +15,22 @@ Rules
 "Remove morpheme boundary"
 %>:0 <=> _ ;
 
-"Short Vowel Deletion"
+
+! Stem Final Short Vowel Deletion needs to be made more elegant
+"Short Vowel Deletion after i"
 i:0 <=> _%>: - ; 
 
-"Short Vowel deletion after a"
+"Short Vowel Deletion after 'i"
+í:0 <=> _%>: - ;
+
+"Short Vowel deletion after 'a"
 á:0 <=> _%>: - ;
+
 	
 "VH Approximative - Short Vow"
 %{A%}:aa <=> ShortVow: %>: :-_ ;
 
 ! shiipi -> shiipi<n><approx>
 
-"VH Approximattive - Long Vow"
+"VH Approximative - Long Vow"
 %{A%}:li <=> LongVow: %>: :-_;
