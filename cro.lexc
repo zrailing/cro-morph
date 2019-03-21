@@ -11,6 +11,7 @@ Multichar_Symbols
 
 %<anom%>		! Agent nominalizer
 %<ltmnom%>	! Locative/temporal/manner nominalizer
+%<indefnom%>	! Indefinite nominalizer
 
 %{A%}				!Archimorpheme aa/li
 %{LTM%}			!Archimorpheme a/0
@@ -27,6 +28,8 @@ LEXICON PRE_DERIV_N
 Nouns ; 
 %<anom%>:ak-%> Verbs ; 
 %<ltmnom%>:al%{LTM%}-%> Verbs ;
+%<indefnom%>:baa-%> Verbs ;
+
 
 
 LEXICON SUFF_DERIV_N
@@ -57,7 +60,8 @@ LEXICON V
 
 LEXICON Verbs
 
-disshí:disshí V ; 	! "dance"
-kummí:kummí V ; 	! "drum and sing"
+disshí:disshí V ; 	! "dance" Active V
+kummí:kummí V ; 	! "drum and sing" Active V
 sáhta:sáhta V ; 	! "forked, pronged"
-ihka-luus-úu:ihka-luus-úu V ;	! TEST CASE "Easter"
+ihka-luus-úu:ihka-luus-úu V ;	! TEST CASE "Easter", lit. eggs-eat-PL Active?
+chikúa:chikúa V ; 	! "sweet" Stative V
