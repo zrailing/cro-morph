@@ -20,26 +20,32 @@ Multichar_Symbols
 
 LEXICON Root
 
-PRE_DERIV_N ;
+POSS_A ; 	!Routed here till further notice
 
 LEXICON PRE_DERIV_N
 
 # ;
 Nouns ; 
-%<anom%>:ak-%> Verbs ; 
-%<ltmnom%>:al%{LTM%}-%> Verbs ;
-%<indefnom%>:baa-%> Verbs ;
+%<anom%>:ak·%> Verbs ; 
+%<ltmnom%>:al%{LTM%}%> Verbs ;
+%<indefnom%>:baa%> Verbs ;
 
 
 
 LEXICON SUFF_DERIV_N
 
 								# ;
-%<approx%>:%>-%{A%}chí # ;
-%<aug%>:%>-kaáshi #;
-%<dim%>:%>-káata #;
-%<sport%>:%>-kísshi #;
-%<real%>:%>-táahili # ; !Often shortened to taale, no reason given
+%<approx%>:%>%{A%}chí # ;
+%<aug%>:%>kaáshi #;
+%<dim%>:%>káata #;
+%<sport%>:%>kísshi #;
+%<real%>:%>táahili # ; !Often shortened to taale, no reason given
+
+LEXICON POSS_A
+
+# ;
+@P.S.1@:@P.S.1@bas%> PRE_DERIV_N ; !Routed to PRE_DERIV_N until order determined
+@P.S.2@:@P.S.2@dís%> PRE_DERIV_N ; 
 
 LEXICON N
 
@@ -53,6 +59,7 @@ buluhpá:buluhpá N ; 	! "wild plum"
 biláannee:biláannee N ; 	! "stove"
 awushí:awushí N ; 	! "cave, den"
 ashí:ashí N; ! "lodge, dwelling"
+íilaalee:íilaalee N;	! "car(s)"
 
 LEXICON V
 
@@ -63,5 +70,5 @@ LEXICON Verbs
 disshí:disshí V ; 	! "dance" Active V
 kummí:kummí V ; 	! "drum and sing" Active V
 sáhta:sáhta V ; 	! "forked, pronged"
-ihka-luus-úu:ihka-luus-úu V ;	! TEST CASE "Easter", lit. eggs-eat-PL Active?
+ihka·luus·úu:ihka·luus·úu V ;	! TEST CASE "Easter", lit. eggs-eat-PL Active?
 chikúa:chikúa V ; 	! "sweet" Stative V

@@ -3,6 +3,7 @@ Alphabet
 	A Á E É I Í O Ó U Ú B C D H K M N P S T X
 	%{A%}:aa %{A%}:li
 	%{LTM%}:a %{LTM%}:0
+	%>:·
 ;
 
 Sets
@@ -14,27 +15,27 @@ LongVow = e é o ó ;
 Rules
 
 "Remove morpheme boundary"
-%>:0 <=> _ ;
+%>:· <=> _ ;
 
 
 ! Stem Final Short Vowel Deletion needs to be made more elegant
 "Short Vowel Deletion after i"
-i:0 <=> _%>: - ; 
+i:0 <=> _%>: · ; 
 
 "Short Vowel Deletion after 'i"
-í:0 <=> _%>: - ;
+í:0 <=> _%>: · ;
 
 "Short Vowel deletion after 'a"
-á:0 <=> _%>: - ;
+á:0 <=> _%>: · ;
 
 	
 "VH Approximative - Short Vow"
-%{A%}:aa <=> ShortVow: %>: :-_ ;
+%{A%}:aa <=> ShortVow: %>: :·_ ;
 
 ! shiipi -> shiipi<n><approx>
 
 "VH Approximative - Long Vow"
-%{A%}:li <=> LongVow: %>: :-_;
+%{A%}:li <=> LongVow: %>: :·_;
 
 "LTM Nom SVD"
-%{LTM%}:0 <=> _ :- [ShortVow|LongVow] ;
+%{LTM%}:0 <=> _ :· [ShortVow|LongVow] ;
