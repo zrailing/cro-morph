@@ -12,21 +12,26 @@ ShortVow = a á i í u ú ;
 
 LongVow = e é o ó ;
 
+Cns = b c d h k m n p s t x ;
+
+Nasal = m n ;
+
+VoicelessObs = p t k ;
+
 Rules
 
 "Remove morpheme boundary"
 %>:· <=> _ ;
 
 
-! Stem Final Short Vowel Deletion needs to be made more elegant
-"Short Vowel Deletion after i"
-i:0 <=> _%>: · ; 
+"Stem short vowel deletion"
+Vx:0 <=> _%>: ;  
+   except 
+        [ :Cns :Cns ] _ %>: :Cns ;
+                :Cns  _ %>: [ :Cns :Cns ] ;
+               :Nasal _ %>: :VoicelessObs ; 
+   where Vx in ( a á i í u ú ) ;
 
-"Short Vowel Deletion after 'i"
-í:0 <=> _%>: · ;
-
-"Short Vowel deletion after 'a"
-á:0 <=> _%>: · ;
 
 	
 "VH Approximative - Short Vow"
