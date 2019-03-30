@@ -3,8 +3,8 @@ Alphabet
 	A Á E É I Í O Ó U Ú B C D H K M N P S T X
 	%{A%}:aa %{A%}:li
 	%{LTM%}:a %{LTM%}:0
-	%{pln%}:uu %{pln%}:iio %{pln%}:aau %{pln%}:eeo 
-	%{pln%}:ou %{pln%}:uuo %{pln%}:io %{pln%}:uo
+	%{plu%}:uu %{plu%}:iio %{plu%}:aau %{plu%}:eeo 
+	%{plu%}:ou %{plu%}:uuo %{plu%}:io %{plu%}:uo
 	%>:·
 ;
 
@@ -53,30 +53,30 @@ Vx:0 <=> _%>: ;
 Cx:m <=> _ %>: [m | b ] ;
    where Cx in (d n l ) ;
 
-"Plural N Formation - SV"
-%{pln%}:uu <=> [i | a | u] %>: _ ; 
+"Plural Formation - SV"
+%{plu%}:uu <=> [i | a | e] %>: _ ; 
 
-"Plural N Formation - aa, ee-aa, ii-aa"
-%{pln%}:aau <=> aa %>: _ ;
+!"Plural Formation - aa, ee-aa, ii-aa"
+!%{plu%}:aau <=> aa %>: _ ;
 ! ii to aa ablaut and ee to aa ablaut follow this rule
 
-"Plural N formation - ii, ee-ii"
-%{pln%}:iio <=> ii %>: _ ; 
+!"Plural Formation - ii, ee-ii"
+!%{plu%}:iio <=> ii %>: _ ; 
 
-"Plural N formation - e, ee"
-%{pln%}:eeo <=> [e | ee] %>: _ ; 
+"Plural Formation - e, ee"
+%{plu%}:eeo <=> ee %>: _ ; 
 
-"Plural N Formation - uu"
-%{pln%}:uuo <=> uu %>: _ ;
+!"Plural Formation - uu"
+!%{plu%}:uuo <=> uu %>: _ ;
 
-"Plural N Formation - oo"
-%{pln%}:oou <=> oo %>: _ ;
+!"Plural Formation - oo"
+!%{plu%}:oou <=> oo %>: _ ;
 
-"Plural N Formation - o"
-%{pln%}:ou <=> o %>: _ ;
+!"Plural Formation - o"
+!%{plu%}:ou <=> o %>: _ ;
 
-"Plural N Formation - ia"
-%{pln%}:io <=> ia %>: _ ;
+!"Plural Formation - ia"
+!%{plu%}:io <=> ia %>: _ ;
 
-"Plural N Formation - ua"
-%{pln%}:uo <=> ua %>: _ ;
+!"Plural Formation - ua"
+!%{plu%}:uo <=> ua %>: _ ;
