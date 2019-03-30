@@ -3,6 +3,8 @@ Alphabet
 	A Á E É I Í O Ó U Ú B C D H K M N P S T X
 	%{A%}:aa %{A%}:li
 	%{LTM%}:a %{LTM%}:0
+	%{pln%}:uu %{pln%}:iio %{pln%}:aau %{pln%}:eeo 
+	%{pln%}:ou %{pln%}:uuo %{pln%}:io %{pln%}:uo
 	%>:·
 ;
 
@@ -17,6 +19,8 @@ Cns = b c d h k m n p s t x ;
 Nasal = m n ;
 
 VoicelessObs = p t k ;
+
+VoicedDent = d n l ;
 
 Rules
 
@@ -44,3 +48,35 @@ Vx:0 <=> _%>: ;
 
 "LTM Nom SVD"
 %{LTM%}:0 <=> _ :· [ShortVow|LongVow] ;
+
+"Nasal assimilation"
+Cx:m <=> _ %>: [m | b ] ;
+   where Cx in (d n l ) ;
+
+"Plural N Formation - SV"
+%{pln%}:uu <=> [i | a | u] %>: _ ; 
+
+"Plural N Formation - aa, ee-aa, ii-aa"
+%{pln%}:aau <=> aa %>: _ ;
+! ii to aa ablaut and ee to aa ablaut follow this rule
+
+"Plural N formation - ii, ee-ii"
+%{pln%}:iio <=> ii %>: _ ; 
+
+"Plural N formation - e, ee"
+%{pln%}:eeo <=> [e | ee] %>: _ ; 
+
+"Plural N Formation - uu"
+%{pln%}:uuo <=> uu %>: _ ;
+
+"Plural N Formation - oo"
+%{pln%}:oou <=> oo %>: _ ;
+
+"Plural N Formation - o"
+%{pln%}:ou <=> o %>: _ ;
+
+"Plural N Formation - ia"
+%{pln%}:io <=> ia %>: _ ;
+
+"Plural N Formation - ua"
+%{pln%}:uo <=> ua %>: _ ;

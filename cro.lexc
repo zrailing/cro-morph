@@ -15,6 +15,7 @@ Multichar_Symbols
 
 %{A%}				!Archimorpheme aa/li
 %{LTM%}			!Archimorpheme a/0
+%{pln%}		!Archimorpheme pln : uu/iio/aau/eeo/uu/oou/uuo/io/uo
 
 %>					! Morpheme boundary
 
@@ -35,11 +36,16 @@ Nouns ;
 LEXICON SUFF_DERIV_N
 
 								# ;
+Plurals ; 
 %<approx%>:%>%{A%}chí # ;
 %<aug%>:%>kaáshi #;
 %<dim%>:%>káata #;
 %<sport%>:%>kísshi #;
 %<real%>:%>táahili # ; !Often shortened to taale, no reason given
+
+LEXICON Plurals
+ # ; 
+%<pl%>:%>%{pln%} # ;
 
 LEXICON POSS_A
 
@@ -61,6 +67,7 @@ awushí:awushí N ; 	! "cave, den"
 ashí:ashí N; ! "lodge, dwelling"
 íilaalee:íilaalee N;	! "car(s)"
 xakúpa:xakúpa N ; 	! "ravine"
+
 
 LEXICON V
 
