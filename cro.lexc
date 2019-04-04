@@ -7,7 +7,8 @@ Multichar_Symbols
 %<aug%>			! Augmentative - real, true
 %<dim%>			! Diminutive
 %<sport%>		! Sportive
-%<real%>			! Real, genuine
+%<real%>		! Real, genuine
+%<cit%>			! Citation form
 
 %<anom%>		! Agent nominalizer
 %<ltmnom%>	! Locative/temporal/manner nominalizer
@@ -16,12 +17,13 @@ Multichar_Symbols
 %{A%}				!Archimorpheme aa/li
 %{LTM%}			!Archimorpheme a/0
 %{plu%}			!Archimorpheme for plural endings
+%{cite%}		! Archimorpheme for citation form endings
 
 %>					! Morpheme boundary
 
 LEXICON Root
 
-POSS_A ; 	!Routed here till further notice
+PRE_DERIV_N ; 	!Routed here till further notice
 
 LEXICON PRE_DERIV_N
 
@@ -49,11 +51,15 @@ Plurals  ;
 LEXICON POSS_A
 
 # ;
-@P.S.1@:@P.S.1@bas%> PRE_DERIV_N ; !Routed to PRE_DERIV_N until order determined
-@P.S.2@:@P.S.2@dís%> PRE_DERIV_N ; 
+
+LEXICON CITATION
+
+# ; 
+%<cit%>:%>%{cite%} SUFF_DERIV_N ;
 
 LEXICON N
 
+%<n%>: CITATION ;
 %<n%>: SUFF_DERIV_N ;
 
 
