@@ -54,8 +54,8 @@ LEXICON POSS_A
 
 LEXICON CITATION
 
-# ; 
-%<cit%>:%>%{cite%} SUFF_DERIV_N ;
+SUFF_DERIV_N ; 
+%<cit%>: # ;
 
 LEXICON N
 
@@ -72,6 +72,10 @@ awushí:awushí N ; 	! "cave, den"
 ashí:ashí N; ! "lodge, dwelling"
 íilaalee:íilaalee N;	! "car(s)"
 xakúpa:xakúpa N ; 	! "ravine"
+dáaxo:dáaxo N ; 	! "lung"
+chiaxxú:chiaxxú N ;	! "five"
+akbinnawóo:akbinawóo N ; 	! "scholar"
+awuú:awuú N ; 		! "inside"
 
 LEXICON V
 

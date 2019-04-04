@@ -82,3 +82,24 @@ Cx:m <=> _ %>: [m | b ] ;
 
 !"Plural Formation - ua"
 !%{plu%}:uo <=> ua %>: _ ;
+
+"Citation forms - e"
+Vy:e <=> _ # ;
+	where Vy in ( a á e é i í ) ;
+
+"Citation forms - o"
+Vx:o <=> _ # ;
+	where Vx in (u ú) ; 
+
+"Citation forms - iia"
+ii:iia <=> _ # ;
+
+"Citation forms - uua"
+uu:uua <=> _ # ;
+
+"Citation forms - ee"
+aa:ee <=> _ # ;
+
+!"Citation forms - 0"
+!Vx:0 <=> _ # ;
+!	where Vx in (o ia ee oo ) ;
