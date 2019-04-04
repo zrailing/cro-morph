@@ -5,8 +5,6 @@ Alphabet
 	%{LTM%}:a %{LTM%}:0
 	%{plu%}:uu %{plu%}:iio %{plu%}:aau %{plu%}:eeo 
 	%{plu%}:ou %{plu%}:uuo %{plu%}:io %{plu%}:uo
-	%{cite%}:e %{cite%}:o %{cite%}:iia %{cite%}:ee
-	%{cite%}:oo %{cite%}:uua %{cite%}:ua
 	%>:·
 ;
 

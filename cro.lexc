@@ -17,7 +17,6 @@ Multichar_Symbols
 %{A%}				!Archimorpheme aa/li
 %{LTM%}			!Archimorpheme a/0
 %{plu%}			!Archimorpheme for plural endings
-%{cite%}		! Archimorpheme for citation form endings
 
 %>					! Morpheme boundary
 
