@@ -3,9 +3,12 @@ Alphabet
 	A Á E É I Í O Ó U Ú B C D H K M N P S T X
 	%{A%}:aa %{A%}:li
 	%{LTM%}:a %{LTM%}:0
-	%{plu%}:uu %{plu%}:iio %{plu%}:aau %{plu%}:eeo 
+	%{plu%}:uu %{plu%}:u
+	%{plu%}:iio %{plu%}:aau %{plu%}:eeo 
 	%{plu%}:ou %{plu%}:uuo %{plu%}:io %{plu%}:uo
 	%{¬%}:0
+	%{∧%}:0
+	aa:0
 	%>:·
 ;
 
@@ -55,29 +58,29 @@ Cx:m <=> _ %>: [m | b ] ;
    where Cx in (d n l ) ;
 
 "Plural Formation - SV"
-%{plu%}:uu <=> [i | a | e] %>: _ ; 
+%{plu%}:uu <=> [i | a | e | ii] %>: _ ; 
 
 "Plural Formation - aa, ee-aa, ii-aa"
-%{plu%}:aau <=> aa %>: _ ;
+%{plu%}:aau <=> [:aa | %{¬%}: | %{∧%}: ] %>: _ ;
 ! ii to aa ablaut and ee to aa ablaut follow this rule
 
-"Plural Formation - ii, ee-ii"
-%{plu%}:iio <=> ii %>: _ ; 
+!"Plural Formation - ii, ee-ii"
+!%{plu%}:iio <=> ii %>: _ ; 
 
-"Plural Formation - e, ee"
-%{plu%}:eeo <=> ee %>: _ ; 
+!"Plural Formation - e, ee"
+!%{plu%}:eeo <=> ee %>: _ ; 
 
-"Plural Formation - uu"
-%{plu%}:uuo <=> uu %>: _ ;
+!"Plural Formation - uu"
+!%{plu%}:uuo <=> uu %>: _ ;
 
-"Plural Formation - oo"
-%{plu%}:oou <=> oo %>: _ ;
+!"Plural Formation - oo"
+!%{plu%}:oou <=> oo %>: _ ;
 
-"Plural Formation - o"
-%{plu%}:ou <=> o %>: _ ;
+!"Plural Formation - o"
+!%{plu%}:ou <=> o %>: _ ;
 
-"Plural Formation - ia"
-%{plu%}:io <=> ia %>: _ ;
+!"Plural Formation - ia"
+!%{plu%}:io <=> ia %>: _ ;
 
 !"Plural Formation - ua"
 !%{plu%}:uo <=> ua %>: _ ;
@@ -99,9 +102,9 @@ uu:uua <=> _ # ;
 "Citation forms - ee"
 aa:ee <=> _ # ;
 
-"Palatal-dental alternation"
+"Palatal-dental alternation (1)"
 !t occurs before a-initial suffixes and plural uu
-c:t <=> _ Vx %>: uu ;
+ch:t <=> _ Vx+ %>: %{pl%} ;
 	where Vx in (a e i o u aa ee ii oo uu);
 
 "Stem ablaut in long vowels (1)"
@@ -115,3 +118,7 @@ Vx:Vy <=> Vx:Vy _ %{¬%}: %>: ;
    where Vx in ( i e e ) 
               Vy in ( a i a )  
    matched ; 
+
+"Identical vowel reduction"
+! with suffixes beginning with a, sequences of 3 or 4 identical vowel morae are reduced to two, e.g. aa-a and aa-aa are reduced to aa. 
+aa:0 <=> _ [%>: | %{¬%}: %>:] [a | aa | %{plu%}: ] ;

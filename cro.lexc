@@ -18,6 +18,7 @@ Multichar_Symbols
 %{LTM%}			!Archimorpheme a/0
 %{plu%}			!Archimorpheme for plural endings
 %{¬%}			!Archimorpheme for ii -> aa ablaut
+%{∧%}			! Archimorpheme for ee -> aa ablaut
 
 %>					! Morpheme boundary
 
