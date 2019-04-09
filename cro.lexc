@@ -17,6 +17,7 @@ Multichar_Symbols
 %{A%}				!Archimorpheme aa/li
 %{LTM%}			!Archimorpheme a/0
 %{plu%}			!Archimorpheme for plural endings
+%{¬%}			!Archimorpheme for ii -> aa ablaut
 
 %>					! Morpheme boundary
 
@@ -27,6 +28,7 @@ PRE_DERIV_N ; 	!Routed here till further notice
 LEXICON PRE_DERIV_N
 
 # ;
+Verbs ; 
 Nouns ; 
 %<anom%>:ak·%> Verbs ; 
 %<ltmnom%>:al%{LTM%}%> Verbs ;
@@ -38,8 +40,7 @@ LEXICON Plurals
 
 
 LEXICON SUFF_DERIV_N
-
-								# ;
+	# ;
 Plurals  ;
 %<approx%>:%>%{A%}chí # ;
 %<aug%>:%>kaáshi #;
@@ -73,8 +74,9 @@ ashí:ashí N; ! "lodge, dwelling"
 xakúpa:xakúpa N ; 	! "ravine"
 dáaxo:dáaxo N ; 	! "lung"
 chiaxxú:chiaxxú N ;	! "five"
-akbinnawóo:akbinawóo N ; 	! "scholar"
+akbinnawóo:akbinnawóo N ; 	! "scholar"
 awuú:awuú N ; 		! "inside"
+bítchii:bítchii%{¬%} N ; ! "knife"
 
 LEXICON V
 
@@ -87,3 +89,4 @@ kummí:kummí V ; 	! "drum and sing" Active V
 sáhta:sáhta V ; 	! "forked, pronged"
 ihka·luus·úu:ihka·luus·úu V ;	! TEST CASE "Easter", lit. eggs-eat-PL Active?
 chikúa:chikúa V ; 	! "sweet" Stative V
+dáschii:dáschii%{¬%} V ; ! "chew"

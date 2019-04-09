@@ -5,6 +5,7 @@ Alphabet
 	%{LTM%}:a %{LTM%}:0
 	%{plu%}:uu %{plu%}:iio %{plu%}:aau %{plu%}:eeo 
 	%{plu%}:ou %{plu%}:uuo %{plu%}:io %{plu%}:uo
+	%{¬%}:0
 	%>:·
 ;
 
@@ -56,27 +57,27 @@ Cx:m <=> _ %>: [m | b ] ;
 "Plural Formation - SV"
 %{plu%}:uu <=> [i | a | e] %>: _ ; 
 
-!"Plural Formation - aa, ee-aa, ii-aa"
-!%{plu%}:aau <=> aa %>: _ ;
+"Plural Formation - aa, ee-aa, ii-aa"
+%{plu%}:aau <=> aa %>: _ ;
 ! ii to aa ablaut and ee to aa ablaut follow this rule
 
-!"Plural Formation - ii, ee-ii"
-!%{plu%}:iio <=> ii %>: _ ; 
+"Plural Formation - ii, ee-ii"
+%{plu%}:iio <=> ii %>: _ ; 
 
 "Plural Formation - e, ee"
 %{plu%}:eeo <=> ee %>: _ ; 
 
-!"Plural Formation - uu"
-!%{plu%}:uuo <=> uu %>: _ ;
+"Plural Formation - uu"
+%{plu%}:uuo <=> uu %>: _ ;
 
-!"Plural Formation - oo"
-!%{plu%}:oou <=> oo %>: _ ;
+"Plural Formation - oo"
+%{plu%}:oou <=> oo %>: _ ;
 
-!"Plural Formation - o"
-!%{plu%}:ou <=> o %>: _ ;
+"Plural Formation - o"
+%{plu%}:ou <=> o %>: _ ;
 
-!"Plural Formation - ia"
-!%{plu%}:io <=> ia %>: _ ;
+"Plural Formation - ia"
+%{plu%}:io <=> ia %>: _ ;
 
 !"Plural Formation - ua"
 !%{plu%}:uo <=> ua %>: _ ;
@@ -98,6 +99,19 @@ uu:uua <=> _ # ;
 "Citation forms - ee"
 aa:ee <=> _ # ;
 
-!"Citation forms - 0"
-!Vx:0 <=> _ # ;
-!	where Vx in (o ia ee oo ) ;
+"Palatal-dental alternation"
+!t occurs before a-initial suffixes and plural uu
+c:t <=> _ Vx %>: uu ;
+	where Vx in (a e i o u aa ee ii oo uu);
+
+"Stem ablaut in long vowels (1)"
+Vx:Vy <=> _ Vx:Vy %{¬%}: %>: ;
+   where Vx in ( i e e ) 
+              Vy in ( a i a )  
+   matched ; 
+
+"Stem ablaut in long vowels (2)"
+Vx:Vy <=> Vx:Vy _ %{¬%}: %>: ;
+   where Vx in ( i e e ) 
+              Vy in ( a i a )  
+   matched ; 
