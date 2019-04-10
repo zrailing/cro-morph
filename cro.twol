@@ -9,7 +9,7 @@ Alphabet
 	%{¬%}:0
 	%{∧%}:0
 	aa:0
-	%>:·
+	%>:0
 ;
 
 Sets
@@ -29,7 +29,7 @@ VoicedDent = d n l ;
 Rules
 
 "Remove morpheme boundary"
-%>:· <=> _ ;
+%>:0 <=> _ ;
 
 
 "Stem short vowel deletion"
@@ -43,15 +43,15 @@ Vx:0 <=> _%>: ;
 
 	
 "VH Approximative - Short Vow"
-%{A%}:aa <=> ShortVow: %>: :·_ ;
+%{A%}:aa <=> ShortVow: %>: _ ;
 
 ! shiipi -> shiipi<n><approx>
 
 "VH Approximative - Long Vow"
-%{A%}:li <=> LongVow: %>: :·_;
+%{A%}:li <=> LongVow: %>: _;
 
 "LTM Nom SVD"
-%{LTM%}:0 <=> _ :· [ShortVow|LongVow] ;
+%{LTM%}:0 <=> _ %>: [ShortVow|LongVow] ;
 
 "Nasal assimilation"
 Cx:m <=> _ %>: [m | b ] ;
@@ -104,7 +104,7 @@ aa:ee <=> _ # ;
 
 "Palatal-dental alternation (1)"
 !t occurs before a-initial suffixes and plural uu
-ch:t <=> _ Vx+ %>: %{pl%} ;
+c:t <=> _ h Vx+ %>: %{pl%} ;
 	where Vx in (a e i o u aa ee ii oo uu);
 
 "Stem ablaut in long vowels (1)"
@@ -119,6 +119,6 @@ Vx:Vy <=> Vx:Vy _ %{¬%}: %>: ;
               Vy in ( a i a )  
    matched ; 
 
-"Identical vowel reduction"
-! with suffixes beginning with a, sequences of 3 or 4 identical vowel morae are reduced to two, e.g. aa-a and aa-aa are reduced to aa. 
-aa:0 <=> _ [%>: | %{¬%}: %>:] [a | aa | %{plu%}: ] ;
+
+!"Elimination of identical vowels"
+!a:0 <=> _ [ :0 ]+ %>: [ á | a a ] ;
