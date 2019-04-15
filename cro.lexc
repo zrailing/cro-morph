@@ -63,6 +63,10 @@ LEXICON POSS_A
 
 @U.Poss.Sg1@%<px1sg%>:@U.Poss.Sg1@ K ;
 @U.Poss.Sg2@%<px2sg%>:@U.Poss.Sg2@ K ;
+
+@U.Poss.Sg1@%<px1pl%>:@U.Poss.Sg1@%>o K ;
+@U.Poss.Sg2@%<px2pl%>:@U.Poss.Sg2@%>o K ;
+
 @U.Poss.None@:@U.Poss.None@ K ; 
 
 LEXICON Poss
