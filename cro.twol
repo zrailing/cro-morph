@@ -26,22 +26,10 @@ VoicelessObs = p t k ;
 
 VoicedDent = d n l ;
 
+Accent = á é í ó ú ; 
+
 Rules
 
-"Remove morpheme boundary"
-%>:0 <=> _ ;
-
-
-"Stem short vowel deletion"
-Vx:0 <=> _%>: ;  
-   except 
-        [ :Cns :Cns ] _ %>: :Cns ;
-                :Cns  _ %>: [ :Cns :Cns ] ;
-               :Nasal _ %>: :VoicelessObs ; 
-   where Vx in ( a á i í u ú ) ;
-
-
-	
 "VH Approximative - Short Vow"
 %{A%}:aa <=> ShortVow: %>: _ ;
 
@@ -85,27 +73,51 @@ Cx:m <=> _ %>: [m | b ] ;
 !"Plural Formation - ua"
 !%{plu%}:uo <=> ua %>: _ ;
 
-"Citation forms - e"
-Vy:e <=> _ # ;
-	where Vy in ( a á e é i í ) ;
-
-"Citation forms - o"
-Vx:o <=> _ # ;
-	where Vx in (u ú) ; 
-
-"Citation forms - iia"
-ii:iia <=> _ # ;
-
-"Citation forms - uua"
-uu:uua <=> _ # ;
-
-"Citation forms - ee"
-aa:ee <=> _ # ;
+!"Citation forms - e"
+!Vy:e <=> _ # ;
+!	where Vy in ( a á e é i í ) ;
+!
+!"Citation forms - o"
+!Vx:o <=> _ # ;
+!	where Vx in (u ú) ; 
+!
+!"Citation forms - iia"
+!ii:iia <=> _ # ;
+!
+!"Citation forms - uua"
+!uu:uua <=> _ # ;
+!
+!"Citation forms - ee"
+!aa:ee <=> _ # ;
 
 "Palatal-dental alternation (1)"
 !t occurs before a-initial suffixes and plural uu
 c:t <=> _ h Vx+ %>: %{pl%} ;
 	where Vx in (a e i o u aa ee ii oo uu);
+
+!"Elimination of identical vowels"
+!a:0 <=> _ [ :0 ]+ %>: [ á | a a ] ;
+
+
+"Tone spreading leftwards"
+Vx:Vy <=> Accent ?* _ ; 
+   except 
+        [ :Cns :Cns ] _ %>: :Cns ;
+                :Cns  _ %>: [ :Cns :Cns ] ;
+               :Nasal _ %>: :VoicelessObs ; 
+   where Vx in ( á é í ó ú )
+         Vy in ( a e i o u )
+   matched ;
+
+!@ d:d í:í s:s >:0 b:b a:a a:a p:p á:a a:a x:x e:e
+
+"Stem short vowel deletion"
+Vx:0 <=> _ %>: ;  
+   except 
+        [ :Cns :Cns ] _ %>: :Cns ;
+                :Cns  _ %>: [ :Cns :Cns ] ;
+               :Nasal _ %>: :VoicelessObs ; 
+   where Vx in ( a á i í u ú ) ;
 
 "Stem ablaut in long vowels (1)"
 Vx:Vy <=> _ Vx:Vy %{¬%}: %>: ;
@@ -120,5 +132,3 @@ Vx:Vy <=> Vx:Vy _ %{¬%}: %>: ;
    matched ; 
 
 
-!"Elimination of identical vowels"
-!a:0 <=> _ [ :0 ]+ %>: [ á | a a ] ;

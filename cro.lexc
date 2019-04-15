@@ -17,6 +17,7 @@ Multichar_Symbols
 %<indefnom%>	! Indefinite nominalizer
 
 @U.Poss.Sg1@
+@U.Poss.Sg2@
 @U.Poss.None@
 
 %{A%}				!Archimorpheme aa/li
@@ -61,11 +62,13 @@ Poss ;
 LEXICON POSS_A
 
 @U.Poss.Sg1@%<px1sg%>:@U.Poss.Sg1@ K ;
+@U.Poss.Sg2@%<px2sg%>:@U.Poss.Sg2@ K ;
 @U.Poss.None@:@U.Poss.None@ K ; 
 
 LEXICON Poss
 
 @U.Poss.Sg1@:@U.Poss.Sg1@bas%> ALI ;
+@U.Poss.Sg2@:@U.Poss.Sg2@dís%> ALI ;
 @U.Poss.None@:@U.Poss.None@    ALI ; 
 
 !LEXICON CITATION
@@ -93,8 +96,11 @@ xakúpa:xakúpa N ; 	! "ravine"
 dáaxo:dáaxo N ; 	! "lung"
 chiaxxú:chiaxxú N ;	! "five"
 akbinnawóo:akbinnawóo N ; 	! "scholar"
-awuú:awuú N ; 		! "inside"
-bítchii:bítchii%{¬%} N ; ! "knife"
+awuú:awuú N ;               ! "inside"
+bítchii:bítchii%{¬%} N ;    ! "knife"
+baapáaxe:baapáaxe N ; ! "flag"
+
+!ahké:ahké N ;               ! "mother"  ! contains suppletive forms
 
 !LEXICON Nouns
 
