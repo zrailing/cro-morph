@@ -10,9 +10,14 @@ Multichar_Symbols
 %<real%>		! Real, genuine
 %<cit%>			! Citation form
 
+%<px1sg%>
+
 %<anom%>		! Agent nominalizer
 %<ltmnom%>	! Locative/temporal/manner nominalizer
 %<indefnom%>	! Indefinite nominalizer
+
+@U.Poss.Sg1@
+@U.Poss.None@
 
 %{A%}				!Archimorpheme aa/li
 %{LTM%}			!Archimorpheme a/0
@@ -26,45 +31,57 @@ LEXICON Root
 
 PRE_DERIV_N ; 	!Routed here till further notice
 
+LEXICON K 
+
+# ; 
+
 LEXICON PRE_DERIV_N
+!
+!Verbs ; 
+!Nouns ; 
+Poss ; 
+!%<anom%>:ak·%> Verbs ; 
+!%<ltmnom%>:al%{LTM%}%> Verbs ;
+!%<indefnom%>:baa%> Verbs ;
+!
+!LEXICON Plurals
+! # ; 
+!%<pl%>:%>%{plu%} # ;
+!
 
-# ;
-Verbs ; 
-Nouns ; 
-%<anom%>:ak·%> Verbs ; 
-%<ltmnom%>:al%{LTM%}%> Verbs ;
-%<indefnom%>:baa%> Verbs ;
-
-LEXICON Plurals
- # ; 
-%<pl%>:%>%{plu%} # ;
-
-
-LEXICON SUFF_DERIV_N
-	# ;
-Plurals  ;
-%<approx%>:%>%{A%}chí # ;
-%<aug%>:%>kaáshi #;
-%<dim%>:%>káata #;
-%<sport%>:%>kísshi #;
-%<real%>:%>táahili # ; !Often shortened to taale, no reason given
+!LEXICON SUFF_DERIV_N
+!	# ;
+!Plurals  ;
+!%<approx%>:%>%{A%}chí # ;
+!%<aug%>:%>kaáshi #;
+!%<dim%>:%>káata #;
+!%<sport%>:%>kísshi #;
+!%<real%>:%>táahili # ; !Often shortened to taale, no reason given
 
 LEXICON POSS_A
 
-# ;
+@U.Poss.Sg1@%<px1sg%>:@U.Poss.Sg1@ K ;
+@U.Poss.None@:@U.Poss.None@ K ; 
 
-LEXICON CITATION
+LEXICON Poss
 
-SUFF_DERIV_N ; 
-%<cit%>: # ;
+@U.Poss.Sg1@:@U.Poss.Sg1@bas%> ALI ;
+@U.Poss.None@:@U.Poss.None@    ALI ; 
+
+!LEXICON CITATION
+
+!SUFF_DERIV_N ; 
+!%<cit%>: # ;
 
 LEXICON N
 
-%<n%>: CITATION ;
-%<n%>: SUFF_DERIV_N ;
+%<n%>: POSS_A ;
 
+!%<n%>: CITATION ;
+!%<n%>: SUFF_DERIV_N ;
 
-LEXICON Nouns
+LEXICON ALI
+
 
 shíipi:shíipi N ; 	! "intestines"
 buluhpá:buluhpá N ; 	! "wild plum"
@@ -79,15 +96,17 @@ akbinnawóo:akbinnawóo N ; 	! "scholar"
 awuú:awuú N ; 		! "inside"
 bítchii:bítchii%{¬%} N ; ! "knife"
 
-LEXICON V
+!LEXICON Nouns
 
-%<v%>: Plurals ; 
-
-LEXICON Verbs
-
-disshí:disshí V ; 	! "dance" Active V
-kummí:kummí V ; 	! "drum and sing" Active V
-sáhta:sáhta V ; 	! "forked, pronged"
-ihka·luus·úu:ihka·luus·úu V ;	! TEST CASE "Easter", lit. eggs-eat-PL Active?
-chikúa:chikúa V ; 	! "sweet" Stative V
-dáschii:dáschii%{¬%} V ; ! "chew"
+!LEXICON V
+!
+!%<v%>: Plurals ; 
+!
+!LEXICON Verbs
+!
+!disshí:disshí V ; 	! "dance" Active V
+!kummí:kummí V ; 	! "drum and sing" Active V
+!sáhta:sáhta V ; 	! "forked, pronged"
+!ihka·luus·úu:ihka·luus·úu V ;	! TEST CASE "Easter", lit. eggs-eat-PL Active?
+!chikúa:chikúa V ; 	! "sweet" Stative V
+!dáschii:dáschii%{¬%} V ; ! "chew"

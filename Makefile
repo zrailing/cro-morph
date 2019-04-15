@@ -1,7 +1,7 @@
 all: cro.gen.hfst cro.mor.hfst cro.mor.hfstol
 
 cro.lexc.hfst: cro.lexc
-	hfst-lexc $< -o $@
+	hfst-lexc --Werror $< -o $@
 
 cro.twol.hfst: cro.twol
 	hfst-twolc $< -o $@
