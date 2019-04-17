@@ -100,16 +100,17 @@ Vy:e <=> _  # ;
 !a:0 <=> _ [ :0 ]+ %>: [ á | a a ] ;
 
 
-"Palatal-dental alternation Part 1"
+"Palatal-dental alternation (ch->t) Part 1"
 !t occurs before a-initial suffixes and plural uu
 c:t <=> _ h: ?* %>: [%{plu%}: | a | b | d] ;
 
 !@ d:d ú:ú t:t c:t h:h i:i >:0 u:u u:u 
 
-"Palatal-dental alternation Part 2"
-h:0 <=> c: _ ?* %>: [%{plu%}: | a | b | d] ;
+"Palatal-dental alternation (ch->t, sh->s) Part 2"
+h:0 <=> [c: | s] _ ?* %>: [%{plu%}: | a | b | d] ;
 
 !@ d:d ú:ú t:t c:t h:0 i:i >:0 u:u u:u
+!@ a:a l:l í:í i:i s:s h:0 i:i >:0 u:u u:u
 
 
 "Tone spreading leftwards"
