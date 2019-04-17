@@ -3,28 +3,30 @@ Multichar_Symbols
 %<n%>			! Noun
 %<v%>			! Verb
 %<pl%>			! Plural
-%<approx%>		! Approximative
-%<aug%>			! Augmentative - real, true
-%<dim%>			! Diminutive
-%<sport%>		! Sportive
-%<real%>		! Real, genuine
+!%<approx%>		! Approximative
+!%<aug%>			! Augmentative - real, true
+!%<dim%>			! Diminutive
+!%<sport%>		! Sportive
+!%<real%>		! Real, genuine
 %<cit%>			! Citation form
 
-%<px1sg%>
+%<px1sg%>		! Possession 1 sg
 
-%<anom%>		! Agent nominalizer
-%<ltmnom%>	! Locative/temporal/manner nominalizer
-%<indefnom%>	! Indefinite nominalizer
+!%<anom%>		! Agent nominalizer
+!%<ltmnom%>	! Locative/temporal/manner nominalizer
+!%<indefnom%>	! Indefinite nominalizer
 
-@U.Poss.Sg1@
-@U.Poss.Sg2@
-@U.Poss.None@
+@U.Poss.Sg1@		! Poss 1sg
+@U.Poss.Sg2@		! Poss 2sg
+@U.Poss.None@		! Poss unmarked
 
-%{A%}				!Archimorpheme aa/li
+
+%{A%}			!Archimorpheme aa/li
 %{LTM%}			!Archimorpheme a/0
 %{plu%}			!Archimorpheme for plural endings
 %{¬%}			!Archimorpheme for ii -> aa ablaut
 %{∧%}			! Archimorpheme for ee -> aa ablaut
+%{cite%}		! Archimorpheme for citation forms
 
 %>					! Morpheme boundary
 
@@ -33,21 +35,24 @@ LEXICON Root
 PRE_DERIV_N ; 	!Routed here till further notice
 
 LEXICON K 
+ # ; 
+Plurals ; 
+CITATION ; 
 
-# ; 
 
 LEXICON PRE_DERIV_N
 !
 !Verbs ; 
 !Nouns ; 
 Poss ; 
+ALI ;
 !%<anom%>:ak·%> Verbs ; 
 !%<ltmnom%>:al%{LTM%}%> Verbs ;
 !%<indefnom%>:baa%> Verbs ;
 !
-!LEXICON Plurals
-! # ; 
-!%<pl%>:%>%{plu%} # ;
+LEXICON Plurals
+ # ; 
+%<pl%>:%>%{plu%} # ;
 !
 
 !LEXICON SUFF_DERIV_N
@@ -75,10 +80,11 @@ LEXICON Poss
 @U.Poss.Sg2@:@U.Poss.Sg2@dís%> ALI ;
 @U.Poss.None@:@U.Poss.None@    ALI ; 
 
-!LEXICON CITATION
+
+LEXICON CITATION
 
 !SUFF_DERIV_N ; 
-!%<cit%>: # ;
+%<cit%>:%{cite%} # ;
 
 LEXICON N
 
@@ -103,6 +109,8 @@ akbinnawóo:akbinnawóo N ; 	! "scholar"
 awuú:awuú N ;               ! "inside"
 bítchii:bítchii%{¬%} N ;    ! "knife"
 baapáaxe:baapáaxe N ; ! "flag"
+baaiihulíshoopá:baaiihulíshoopá N ; ! "table"
+dúuchilua:dúuchilua N ; ! "drag" ; test case for final schwa del
 
 !ahké:ahké N ;               ! "mother"  ! contains suppletive forms
 

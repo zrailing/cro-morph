@@ -6,6 +6,8 @@ Alphabet
 	%{plu%}:uu %{plu%}:u
 	%{plu%}:iio %{plu%}:aau %{plu%}:eeo 
 	%{plu%}:ou %{plu%}:uuo %{plu%}:io %{plu%}:uo
+	%{cite%}:e %{cite%}:o %{cite%}:a %{cite%}:ee
+	%{cite%}:0
 	%{¬%}:0
 	%{∧%}:0
 	aa:0
@@ -69,10 +71,18 @@ Rules
 !"Plural Formation - ua"
 !%{plu%}:uo <=> ua %>: _ ;
 
-!"Citation forms - e"
-!Vy:e <=> _ # ;
-!	where Vy in ( a á e é i í ) ;
-!
+"Citation forms - basic"
+%{cite%}:0 <=> _ # ;
+	except
+		[ i | a | u  | á | í | ú] %>: _ # ; 
+!@ í:í i:i l:l a:a a:a l:l e:e e:e %{cite%}:0
+		
+
+"Citation forms - e"
+Vy:e <=> _  # ;
+	where Vy in ( a á e é i í ) ;
+!@ b:b a:a a:a i:i h:h u:u l:l í:í s:s h:h o:o o:o p:p á:é
+
 !"Citation forms - o"
 !Vx:o <=> _ # ;
 !	where Vx in (u ú) ; 
@@ -93,7 +103,7 @@ Rules
 "Palatal-dental alternation (1)"
 !t occurs before a-initial suffixes and plural uu
 c:t <=> _ h Vx+ %>: %{pl%} ;
-	where Vx in (a e i o u aa ee ii oo uu);
+	where Vx in (a e i o u aa ee ii oo uu) ;
 
 
 "Tone spreading leftwards"
@@ -113,7 +123,9 @@ Vx:0 <=> _ %>: ;
    except 
         [ :Cns :Cns ] _ %>: :Cns ;
                 :Cns  _ %>: [ :Cns :Cns ] ;
-               :Nasal _ %>: :VoicelessObs ; 
+               :Nasal _ %>: :VoicelessObs ;
+		_ %>: %{cite%}: ; 
+	[ i | í | u | ú] _ %>: a ; 
    where Vx in ( a á i í u ú ) ;
 
 "Stem ablaut in long vowels (1)"
@@ -134,3 +146,8 @@ Vx:Vy <=> Vx:Vy _ %{¬%}: %>: ;
 Cx:m <=> _ %>: [ m | b ] ;
    where Cx in ( d n l ) ;
 
+"Final Schwa Deletion"
+!The final schwa of a dipthong is deleted before suffixes beginning with a and before the plural
+a:0 <=> [ i | í | u | ú] _ %>: a ;
+!@ d:d ú:ú u:u c:c h:h i:i l:l u:u a:0 >:0 plu:o
+! Note that following plural morpheme is conditioned by the remaining V
