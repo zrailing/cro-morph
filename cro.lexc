@@ -42,28 +42,23 @@ CITATION ;
 
 
 LEXICON PRE_DERIV_N
-!
-!Verbs ; 
-!Nouns ; 
 Poss ; 
 ALI ;
-!%<anom%>:ak·%> Verbs ; 
-!%<ltmnom%>:al%{LTM%}%> Verbs ;
-!%<indefnom%>:baa%> Verbs ;
-!
+
 LEXICON Plurals
  # ; 
+SUFF_DERIV_N ; 
 %<pl%>:%>%{plu%} # ;
-!
 
-!LEXICON SUFF_DERIV_N
-!	# ;
-!Plurals  ;
-!%<approx%>:%>%{A%}chí # ;
-!%<aug%>:%>kaáshi #;
-!%<dim%>:%>káata #;
-!%<sport%>:%>kísshi #;
-!%<real%>:%>táahili # ; !Often shortened to taale, no reason given
+
+LEXICON SUFF_DERIV_N
+	# ;
+Plurals  ;
+%<approx%>:%>%{A%}chí # ;
+%<aug%>:%>kaáshi #;
+%<dim%>:%>káata #;
+%<sport%>:%>kísshi #;
+%<real%>:%>táahili # ; !Often shortened to taale, no reason given
 
 LEXICON POSS_A
 
@@ -85,18 +80,13 @@ LEXICON Poss
 
 LEXICON CITATION
 
-!SUFF_DERIV_N ; 
 %<cit%>:%>%{cite%} # ;
 
 LEXICON N
 
 %<n%>: POSS_A ;
 
-!%<n%>: CITATION ;
-!%<n%>: SUFF_DERIV_N ;
-
 LEXICON ALI
-
 
 shíipi:shíipi N ; 	! "intestines"
 buluhpá:buluhpá N ; 	! "wild plum"
@@ -122,7 +112,6 @@ apáaliia:apáaliia N ; 	! "porcupine"
 
 !ahké:ahké N ;               ! "mother"  ! contains suppletive forms
 
-!LEXICON Nouns
 
 !LEXICON V
 !

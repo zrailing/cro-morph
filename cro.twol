@@ -32,16 +32,16 @@ Accent = á é í ó ú ;
 
 Rules
 
-!"VH Approximative - Short Vow"
-!%{A%}:aa <=> ShortVow: %>: _ ;
-!
+"VH Approximative - Short Vow"
+%{A%}:aa <=> ShortVow: %>: _ ;
+
 !! shiipi -> shiipi<n><approx>
-!
-!"VH Approximative - Long Vow"
-!%{A%}:li <=> LongVow: %>: _;
-!
-!"LTM Nom SVD"
-!%{LTM%}:0 <=> _ %>: [ShortVow|LongVow] ;
+
+"VH Approximative - Long Vow"
+%{A%}:li <=> LongVow: %>: _;
+
+"LTM Nom SVD"
+%{LTM%}:0 <=> _ %>: [ShortVow|LongVow] ;
 
 "Plurals - (i a u) -> uu Pt 1"
 ! Vx turns to u before %{plu%}, subsequent rule turns %{plu%} to u if not preceding underlying u 
