@@ -3,11 +3,9 @@ Alphabet
  A Á E É I Í O Ó U Ú B C D H K M N P S T X L
 	%{A%}:aa %{A%}:li
 	%{LTM%}:a %{LTM%}:0
-	%{plu%}:uu %{plu%}:u
-	%{plu%}:iio %{plu%}:aau %{plu%}:eeo 
-	%{plu%}:ou %{plu%}:uuo %{plu%}:io %{plu%}:uo
-	%{cite%}:e %{cite%}:o %{cite%}:a %{cite%}:ee
-	%{cite%}:0
+	%{plu%}:u 
+	%{plu%}:o
+	%{cite%}:e %{cite%}:a %{cite%}:0
 	%{¬%}:0
 	%{∧%}:0
 	%{∨%}:0
@@ -44,33 +42,25 @@ Rules
 !"LTM Nom SVD"
 !%{LTM%}:0 <=> _ %>: [ShortVow|LongVow] ;
 
-!"Plural Formation - SV"
-!%{plu%}:uu <=> [i | a | e | ii] %>: _ ; 
-!
-!"Plural Formation - aa, ee-aa, ii-aa"
-!%{plu%}:aau <=> [:aa | %{¬%}: | %{∧%}: ] %>: _ ;
-! ii to aa ablaut and ee to aa ablaut follow this rule
+"Plurals - (i a u) -> uu Pt 1"
+! Vx turns to u before %{plu%}, subsequent rule turns %{plu%} to u if not preceding underlying u 
+Vx:u <=> _ %>: %{plu%} #;
+	where Vx in ( i a u á í ú) ;
+!@ s:s h:h í:í i:i p:i i:u >:0 %{plu%}:%{plu%}
 
-!"Plural Formation - ii, ee-ii"
-!%{plu%}:iio <=> ii %>: _ ; 
+"Plurals - ( i a u ) -> uu Pt 2"
+! %{plu%} realizes as u if not following underlying u 
+%{plu%}:u <=> u %>: _ # ; 
+	except 
+		[u: | ú: ]+ %>: _ # ; 
+!@ s:s h:h í:í i:i p:p i:u >:0 %{plu%}:u 
 
-!"Plural Formation - e, ee"
-!%{plu%}:eeo <=> ee %>: _ ; 
-
-!"Plural Formation - uu"
-!%{plu%}:uuo <=> uu %>: _ ;
-
-!"Plural Formation - oo"
-!%{plu%}:oou <=> oo %>: _ ;
-
-!"Plural Formation - o"
-!%{plu%}:ou <=> o %>: _ ;
-
-!"Plural Formation - ia"
-!%{plu%}:io <=> ia %>: _ ;
-
-!"Plural Formation - ua"
-!%{plu%}:uo <=> ua %>: _ ;
+"Plurals - append o "
+%{plu%}:o <=> Vx Vy %>: _ # ; 
+	where Vx in ( i a e e u)
+	      Vy in ( i a e 0 u)
+	matched;
+!@ b:b i:i l:l á:á a:a n:n n:n e:e e:e >:0 %{plu%}:o 
 
 "Citation forms - basic"
 %{cite%}:0 <=> _ # ;
@@ -117,7 +107,7 @@ c:t <=> _ h: ?* %>: [%{plu%}: | a | b | d] ;
 !@ d:d ú:ú t:t c:t h:h i:i >:0 u:u u:u 
 
 "Palatal-dental alternation (ch->t, sh->s) Part 2"
-h:0 <=> [c: | s] _ ?* %>: [%{plu%}: | a | b | d] ;
+h:0 <=> [c: | s] _ [ShortVow | LongVow] %>: [%{plu%}: | a | b | d] ;
 
 !@ d:d ú:ú t:t c:t h:0 i:i >:0 u:u u:u
 !@ a:a l:l í:í i:i s:s h:0 i:i >:0 u:u u:u
@@ -165,6 +155,6 @@ Cx:m <=> _ %>: [ m | b ] ;
 
 "Final Schwa Deletion"
 !The final schwa of a dipthong is deleted before suffixes beginning with a and before the plural
-a:0 <=> [ i | í | u | ú] _ %>: a ;
+a:0 <=> [ i | í | u | ú] _ %>: [a | %{plu%}: ];
 !@ d:d ú:ú u:u c:c h:h i:i l:l u:u a:0 >:0 plu:o
 ! Note that following plural morpheme is conditioned by the remaining V
