@@ -10,6 +10,7 @@ Alphabet
 	%{cite%}:0
 	%{¬%}:0
 	%{∧%}:0
+	%{∨%}:0
 	aa:0
 	%>:0
 ;
@@ -74,27 +75,36 @@ Rules
 "Citation forms - basic"
 %{cite%}:0 <=> _ # ;
 	except
-		[ i | a | u  | á | í | ú] %>: _ # ; 
+		[ i | a | e | é | á | í ] %>: _ # ;
+		Vx Vy %>: _ # ;  
+	where Vx in (i i í u ú u)
+	      Vy in (i í i u u ú)
+	matched;
 !@ í:í i:i l:l a:a a:a l:l e:e e:e %{cite%}:0
 		
 
-"Citation forms - e"
-Vy:e <=> _  # ;
-	where Vy in ( a á e é i í ) ;
-!@ b:b a:a a:a i:i h:h u:u l:l í:í s:s h:h o:o o:o p:p á:é
+"Citation forms - e pt 1"
+Vx:0 <=> _ %>: %{cite%}: # ;
+!	where Vx in ( a á e é i í ) ;
+!@ b:b a:a a:a i:i h:h u:u l:l í:í s:s h:h o:o o:o p:p á:0 >:0 %{cite%}:e
 
-!"Citation forms - o"
-!Vx:o <=> _ # ;
-!	where Vx in (u ú) ; 
-!
-!"Citation forms - iia"
-!ii:iia <=> _ # ;
-!
-!"Citation forms - uua"
-!uu:uua <=> _ # ;
-!
-!"Citation forms - ee"
-!aa:ee <=> _ # ;
+"Citation forms - e pt 2"
+%{cite%}:e <=> [i: | a: | e: | é: | á: | í: ]  %>: _ # ; 
+!@ a:a p:p á:0 >:0 %{cite%}:e
+
+"Citation forms - o "
+Vx:Vy <=> _ %>: %{cite%}: # ; 
+	where Vx in ( ú u ) 
+	      Vy in ( ó o )
+	matched ; 
+!@ c:c h:h i:i a:a x:x x:x ú:o >:0 %{cite%}:0
+
+"Citation forms - append a "
+%{cite%}:a <=> Vx Vy %>: _ # ; 
+	where Vx in (i i í u ú u)
+	      Vy in (i í i u u ú)
+	matched; 
+!@ b:b í:í t:t c:c h:h i:i i:i >:0 %{cite%}:a
 
 !"Elimination of identical vowels"
 !a:0 <=> _ [ :0 ]+ %>: [ á | a a ] ;
@@ -136,13 +146,13 @@ Vx:0 <=> _ %>: ;
    where Vx in ( a á i í u ú ) ;
 
 "Stem ablaut in long vowels (1)"
-Vx:Vy <=> _ Vx:Vy %{¬%}: %>: ;
+Vx:Vy <=> _ Vx:Vy %{¬%}: %>: %{plu%}: ;
    where Vx in ( i e e ) 
               Vy in ( a i a )  
    matched ; 
 
 "Stem ablaut in long vowels (2)"
-Vx:Vy <=> Vx:Vy _ %{¬%}: %>: ;
+Vx:Vy <=> Vx:Vy _ %{¬%}: %>: %{plu%}: ;
    where Vx in ( i e e ) 
               Vy in ( a i a )  
    matched ; 

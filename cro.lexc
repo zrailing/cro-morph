@@ -25,7 +25,8 @@ Multichar_Symbols
 %{LTM%}			!Archimorpheme a/0
 %{plu%}			!Archimorpheme for plural endings
 %{¬%}			!Archimorpheme for ii -> aa ablaut
-%{∧%}			! Archimorpheme for ee -> aa ablaut
+%{∧%}			! Archimorpheme for ee -> aa ablaut, type 1
+%{∨%}			! Archimorpheme for ee->aa ablaut, type 2
 %{cite%}		! Archimorpheme for citation forms
 
 %>					! Morpheme boundary
@@ -73,6 +74,7 @@ LEXICON POSS_A
 @U.Poss.Sg2@%<px2pl%>:@U.Poss.Sg2@%>o K ;
 
 @U.Poss.None@:@U.Poss.None@ K ; 
+ K ;
 
 LEXICON Poss
 
@@ -84,7 +86,7 @@ LEXICON Poss
 LEXICON CITATION
 
 !SUFF_DERIV_N ; 
-%<cit%>:%{cite%} # ;
+%<cit%>:%>%{cite%} # ;
 
 LEXICON N
 
@@ -113,6 +115,9 @@ baaiihulíshoopá:baaiihulíshoopá N ; ! "table"
 dúuchilua:dúuchilua N ; ! "drag" test case for final schwa del
 dútchi:dútchi N ; 	! "grab"
 alíishi:alíishi N ; 	! "hungry"
+kalée:kalée%{¬%} N ; 	! "vomit" ee->aa Type 1
+bachée:bachée N ; 	! "man"
+apá:apá N ; 		! "nose"
 
 !ahké:ahké N ;               ! "mother"  ! contains suppletive forms
 
