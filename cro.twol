@@ -5,6 +5,7 @@ Alphabet
 	%{LTM%}:a %{LTM%}:0
 	%{plu%}:u 
 	%{plu%}:o
+	%{plu%}:0
 	%{cite%}:e %{cite%}:a %{cite%}:0
 	%{¬%}:0
 	%{∧%}:0
@@ -57,10 +58,27 @@ Vx:u <=> _ %>: %{plu%} #;
 
 "Plurals - append o "
 %{plu%}:o <=> Vx Vy %>: _ # ; 
-	where Vx in ( i a e e u)
-	      Vy in ( i a e 0 u)
+	where Vx in ( i e e u)
+	      Vy in ( i e 0 u)
 	matched;
 !@ b:b i:i l:l á:á a:a n:n n:n e:e e:e >:0 %{plu%}:o 
+
+"Plurals - append u "
+%{plu%}:u <=> Vx Vy %>: _ # ; 
+	where Vx in (a a á o o ó o)
+	      Vy in (a á a o 0 o ó)
+	matched;
+!@ a:a k:k b:b i:i n:n n:n a:a w:w ó:ó o:o >:0 %{plu%}:u
+
+"Plurals - a -> o"
+a:o <=> Vx _ %>: %{plu%} # ; 
+	where Vx in (i í u ú) ; 
+!@ a:a p:p á:á a:a l:l i:i i:i a:a >:0 %{plu%}:%{plu%}
+
+"Plurals - a -> o Pt 2"
+%{plu%}:0 <=> Vx a %>: _ # ;
+	where Vx in (i í u ú) ; 
+!@ a:a p:p á:á a:a l:l i:i i:i a:a >:0 %{plu%}:0
 
 "Citation forms - basic"
 %{cite%}:0 <=> _ # ;
